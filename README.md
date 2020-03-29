@@ -1,27 +1,45 @@
 # ObsAngularChallenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+This repository contains the code for the angular challenge posed by OBS during the recruitment process.
 
-## Development server
+## Target
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To build a basic prototype for the frontend of a task management application using Angular. The Angular application will use a REST service provided by OBS as its backend.
 
-## Code scaffolding
+## Backend API
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Create
+POST: http://amimusa.xen.prgmr.com:3000/tasks/:owner
 
-## Build
+Params:
+&quot;owner&quot;: &lt;integer&gt;
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Body:
+{
+&quot;description&quot;: &lt;string&gt;,
+&quot;completed&quot;: &lt;boolean&gt;
+}
 
-## Running unit tests
+### Read
+GET: http://amimusa.xen.prgmr.com:3000/tasks/:owner
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Params:
+&quot;owner&quot;: &lt;integer&gt;
 
-## Running end-to-end tests
+### Update
+PATCH: http://amimusa.xen.prgmr.com:3000/tasks/:id
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Params:
+&quot;id&quot;: &lt;string&gt;
 
-## Further help
+Body:
+{
+&quot;description&quot;: &lt;string&gt;,
+&quot;completed&quot;: &lt;boolean&gt;
+}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Delete
+DELETE: http://amimusa.xen.prgmr.com:3000/tasks/:id
+
+Params:
+&quot;id&quot;: &lt;string&gt;
