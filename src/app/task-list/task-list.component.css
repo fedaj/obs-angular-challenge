@@ -1,0 +1,116 @@
+* {
+    font-family:
+        'Lucida Sans',
+        'Lucida Sans Regular',
+        'Lucida Grande',
+        'Lucida Sans Unicode',
+        Geneva,
+        Verdana,
+        sans-serif;
+}
+
+#container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.filter {
+    width: fit-content;
+    margin: auto;
+    border: solid .2rem black;
+    border-radius: .5rem;
+    padding: 1rem;
+    background-color: ivory;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.filter .title {
+    margin: 0 0 1rem 0;
+}
+
+.filter button {
+    border: solid .2rem lightskyblue;
+    border-radius: .2rem;
+    background-color: lightcyan;
+    margin-right: .5rem;
+    padding: .5rem;
+}
+
+.filter button:last-of-type {
+    margin-right: 0;
+}
+
+.add {
+    border: solid .2rem lawngreen;
+    border-radius: .2rem;
+    background-color: greenyellow;
+    width: 100%;
+    padding: .2rem;
+    margin-bottom: 1rem;
+}
+
+.add:hover {
+    background-color: lawngreen;
+}
+
+table {
+    width: 100%;
+    border: solid .2rem black;
+    border-radius: .5rem;
+    padding: 1rem;
+    background-color: ivory;
+}
+
+td {
+    padding-top: 1rem;
+    padding-right: 1rem;
+}
+
+td:last-of-type {
+    padding-right: 0;
+}
+
+table button {
+    border-style: solid;
+    border-width: .2rem;
+    border-radius: .2rem;
+    width: 100%;
+    padding: .2rem;
+}
+
+table button.edit {
+    border-color: lawngreen;
+    background-color: greenyellow;
+}
+
+table button.edit:hover {
+    background-color: lawngreen;
+}
+
+table button.remove {
+    border-color: lightcoral;
+    background-color: lightsalmon;
+}
+
+table button.remove:hover {
+    background-color: lightcoral;
+}
+
+table button.toggleComplete {
+    border-color: lightskyblue;
+    background-color: lightcyan;
+}
+
+table button.toggleComplete:hover {
+    background-color: lightskyblue;
+}
+
+.status.done > span::before {
+    content: "✅ ";
+}
+
+.status.pending > span::before {
+    content: "🕛 ";
+}

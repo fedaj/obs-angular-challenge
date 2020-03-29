@@ -1,0 +1,39 @@
+<div id="container">
+    <div class="filter">
+        <h3 class="title">Filters</h3>
+        <button type="button" (click)="showAll()">All tasks</button>
+        <button type="button" (click)="showOnlyComplete()">Completed tasks</button>
+        <button type="button" (click)="showOnlyPending()">Pending tasks</button>
+    </div>
+    <button type="button" [routerLink]="['/task-create']" class="add">➕ Add</button>
+    <table>
+        <thead>
+            <th>Description</th>
+            <th>Last Changed</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of filtered">
+                <td>{{ task.description }}</td>
+                <td>{{ task.updatedAt | date:"dd/MM/yyyy" }}</td>
+                <td class="status {{ task.completed ? 'done' : 'pending' }}">
+                    <span>{{ task.completed ? "Done" : "Pending" }}</span>
+                </td>
+                <td>
+                    <button type="button" [routerLink]="['/task-edit', task._id]" class="edit">🖉 Edit</button>
+                </td>
+                <td>
+                    <button type="button" (click)="remove(task._id)" class="remove">🗑️ Remove</button>
+                </td>
+                <td>
+                    <button type="button" (click)="toggleComplete(task)" class="toggleComplete">
+                        {{ task.completed ? "🕛 Marcar pendiente" : "✅ Marcar completa" }}
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

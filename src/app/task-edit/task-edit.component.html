@@ -1,0 +1,15 @@
+<form [formGroup]="taskForm" (ngSubmit)="send()">
+    <fieldset>
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description"></textarea>
+    </fieldset>
+    <fieldset>
+        <input type="checkbox" id="completed" formControlName="completed"> Completed
+    </fieldset>
+    <fieldset>
+        <button type="Submit" class="update">{{ isEditing ? "Update" : "Create" }}</button>
+    </fieldset>
+    <fieldset>
+        <button type="button" class="back" [routerLink]="['/task-list']">Go back</button>
+    </fieldset>
+</form>
